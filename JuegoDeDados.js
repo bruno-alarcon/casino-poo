@@ -13,8 +13,6 @@ var JuegoDeDados = /** @class */ (function () {
         fs.writeFile(nombre, texto, function (error) {
             if (error)
                 console.log("ERROR");
-            else
-                console.log("Se creo el archivo");
         });
     };
     JuegoDeDados.prototype.crearArchivo = function (nombre, texto) {

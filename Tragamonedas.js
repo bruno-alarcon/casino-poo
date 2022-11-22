@@ -22,8 +22,6 @@ var Tragamonedas = /** @class */ (function () {
         fs.writeFile(nombre, texto, function (error) {
             if (error)
                 console.log("ERROR");
-            else
-                console.log("Se creo el archivo");
         });
     };
     Tragamonedas.prototype.crearArchivo = function (nombre, texto) {
@@ -39,11 +37,6 @@ var Tragamonedas = /** @class */ (function () {
             else
                 console.log(texto.toString());
         });
-    };
-    Tragamonedas.prototype.crearAstericos = function () {
-        for (var index = 0; index < 20; index++) {
-            console.log("*");
-        }
     };
     return Tragamonedas;
 }());

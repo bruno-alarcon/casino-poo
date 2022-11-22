@@ -56,9 +56,9 @@ public asignarSimbolos(num:number):string{
         let num3:number;
         let gano:boolean;
          
-        num1=this.generarnumero(5,1);
-        num2=this.generarnumero(5,1);
-        num3=this.generarnumero(5,1);
+        num1=this.generarnumero(3,1);
+        num2=this.generarnumero(3,1);
+        num3=this.generarnumero(3,1);
 
         gano=this.compararNumeros(num1,num2,num3);
         let simbolo1=this.asignarSimbolos(num1);

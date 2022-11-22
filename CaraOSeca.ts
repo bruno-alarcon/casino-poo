@@ -19,8 +19,7 @@ private manipularArchivo(nombre:string,texto:string){
     fs.writeFile(nombre,texto, error =>{
         if(error)
          console.log("ERROR");
-         else 
-         console.log("Se creo el archivo");
+
     });
 
  }
@@ -53,29 +52,29 @@ private manipularArchivo(nombre:string,texto:string){
 
 
     private tirarMoneda():number{
-      return Math.floor(Math.random() * (3-2) + 2) ;
+      return Math.floor(Math.random() * (2-0) + 1) ;
   
    }
 
 
     public jugar():boolean{
 
-      let moneda:number = this.tirarMoneda();
+      let moneda:number;
       let gano :boolean=false;
       console.log("JUEGO CARA O SECA. OPCIONES DISPONIBLES: ");
       console.log("1- CARA");
-      console.log("2- CRUZ");
+      console.log("2- SECA");
       let opcionElegida=parseInt(readlineSync.question("ELIJA LA OPCION QUE DESEE: "));
-
-      opcionElegida+=1;
-      if(moneda === 2){
+      moneda = this.tirarMoneda();
+  
+      if(moneda === 1){
          
          console.log("HA SALIDO CARA");
          
 
       }
       else{
-         console.log("HA SALIDO CRUZ");
+         console.log("HA SALIDO SECA");
          
       }
 

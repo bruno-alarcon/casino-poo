@@ -28,8 +28,7 @@ private manipularArchivo(nombre:string,texto:string){
     fs.writeFile(nombre,texto, error =>{
         if(error)
          console.log("ERROR");
-         else 
-         console.log("Se creo el archivo");
+
     });
 
  }

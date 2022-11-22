@@ -45,8 +45,7 @@ export class Tragamonedas{
     fs.writeFile(nombre,texto, error =>{
         if(error)
          console.log("ERROR");
-         else 
-         console.log("Se creo el archivo");
+      
     });
 
  }
@@ -75,23 +74,6 @@ public leerArchivo(path:string){
 
    })
    }
-
-   private crearAstericos(){
-
-      
-      for (let index = 0; index < 20; index++) {
-         console.log("*");
-         
-      }
-
-
-   }
-
-
-
-
-
-
 
 
 

@@ -51,9 +51,9 @@ var TragamonedaSignos = /** @class */ (function (_super) {
         var num2;
         var num3;
         var gano;
-        num1 = this.generarnumero(5, 1);
-        num2 = this.generarnumero(5, 1);
-        num3 = this.generarnumero(5, 1);
+        num1 = this.generarnumero(3, 1);
+        num2 = this.generarnumero(3, 1);
+        num3 = this.generarnumero(3, 1);
         gano = this.compararNumeros(num1, num2, num3);
         var simbolo1 = this.asignarSimbolos(num1);
         var simbolo2 = this.asignarSimbolos(num2);
