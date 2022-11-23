@@ -21,7 +21,7 @@ var TragamonedaSignos = /** @class */ (function (_super) {
     __extends(TragamonedaSignos, _super);
     function TragamonedaSignos() {
         var _this = _super.call(this) || this;
-        _this.valor = 110;
+        _this.valor = 350;
         return _this;
     }
     TragamonedaSignos.prototype.getValor = function () {
@@ -38,8 +38,6 @@ var TragamonedaSignos = /** @class */ (function (_super) {
                 break;
             case 3:
                 simbolo = "*";
-            case 4:
-                simbolo = "#";
                 break;
             default:
                 break;

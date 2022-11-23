@@ -4,7 +4,7 @@ exports.JuegoDeDados = void 0;
 var fs = require('fs');
 var JuegoDeDados = /** @class */ (function () {
     function JuegoDeDados() {
-        this.valor = 210;
+        this.valor = 300;
     }
     JuegoDeDados.prototype.getValor = function () {
         return this.valor;

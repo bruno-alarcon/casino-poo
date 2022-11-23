@@ -23,41 +23,41 @@ var apuestaRecarga;
 var l1 = new TragamonedaNumeros_1.TragamonedaNumeros();
 l1.crearArchivo("Historial de juego Tragamoneds Numeros.txt", txtHistorialTNumeros);
 l1.crearArchivo("BIENVENIDA A CASINO.txt", texto);
-var d1 = new JuegoDeDados_1.JuegoDeDados();
-d1.crearArchivo("Historial de juego Juego de dados.txt", txtHistorialDados);
-var c1 = new CaraOSeca_1.CaraOSeca();
-c1.crearArchivo("Historial de juego Cara o Seca.txt", txtHistorialCaraOSeca);
-var tS = new TragamonedaSignos_1.TragamonedaSignos();
-tS.crearArchivo("Historial de juego Tragamoneda Signos.txt", txtHistorialTSignos);
+var dados1 = new JuegoDeDados_1.JuegoDeDados();
+dados1.crearArchivo("Historial de juego de dados.txt", txtHistorialDados);
+var caraOSeca1 = new CaraOSeca_1.CaraOSeca();
+caraOSeca1.crearArchivo("Historial de juego Cara o Seca.txt", txtHistorialCaraOSeca);
+var tragamonedaSignos = new TragamonedaSignos_1.TragamonedaSignos();
+tragamonedaSignos.crearArchivo("Historial de juego Tragamoneda Signos.txt", txtHistorialTSignos);
 var gano;
 var opcion = 0;
 console.log("BIENVENIDO AL CASINO");
 l1.leerArchivo("BIENVENIDA A CASINO.txt");
 var apuesta = parseInt(readlineSync.question("INGRESE LA CANTIDAD DE DINERO QUE DESEE DEPOSITAR:  $"));
-while (apuesta < 110) {
-    console.log("PARA JUGAR CON NOSOTROS DEBE INGRESAR UNA CANTIDAD MAYOR A $110.");
+while (apuesta < caraOSeca1.getValor()) {
+    console.log("PARA JUGAR CON NOSOTROS DEBE INGRESAR UNA CANTIDAD MAYOR A $" + caraOSeca1.getValor());
     apuesta = parseInt(readlineSync.question("INGRESE LA CANTIDAD DE DINERO QUE DESEE DEPOSITAR:  $"));
 }
 do {
-    console.log("1- TRAGAMONEDAS VERSION NUMEROS. VALOR: $120");
-    console.log("2- JUEGO DE DADOS. VALOR: $210");
-    console.log("3- CARA O SECA. VALOR: $250");
-    console.log("4- TRAGAMONEDAS SIGNOS. VALOR: $110");
+    console.log("1- TRAGAMONEDAS VERSION NUMEROS. VALOR: $" + l1.getValor());
+    console.log("2- JUEGO DE DADOS. VALOR: $" + dados1.getValor());
+    console.log("3- CARA O SECA. VALOR: $" + caraOSeca1.getValor());
+    console.log("4- TRAGAMONEDAS SIGNOS. VALOR: $" + tragamonedaSignos.getValor());
     console.log("5- RECARGAR DINERO");
     console.log("6- SALIR Y RETIRAR DINERO");
     opcion = parseInt(readlineSync.question("ELIJA LA OPCION QUE DESEE: "));
     while (opcion <= 0 || opcion > 6) {
         console.log("INGRESE UNA OPCION VALIDA");
-        console.log("1- TRAGAMONEDAS VERSION NUMEROS. VALOR: $120");
-        console.log("2- JUEGO DE DADOS. VALOR: $210");
-        console.log("3- CARA O SECA. VALOR: $250");
-        console.log("4- TRAGAMONEDAS SIGNOS. VALOR: $110");
+        console.log("1- TRAGAMONEDAS VERSION NUMEROS. VALOR: $" + l1.getValor());
+        console.log("2- JUEGO DE DADOS. VALOR: $" + dados1.getValor());
+        console.log("3- CARA O SECA. VALOR $" + caraOSeca1.getValor());
+        console.log("4- TRAGAMONEDAS SIGNOS. VALOR: $" + tragamonedaSignos.getValor());
         console.log("5- RECARGAR DINERO");
         console.log("6- SALIR Y RETIRAR DINERO");
         opcion = parseInt(readlineSync.question("ELIJA LA OPCION QUE DESEE: "));
     }
     if (opcion > 0 && opcion <= 4) {
-        if (apuesta < 110) {
+        if (apuesta < caraOSeca1.getValor()) {
             console.log("Su saldo actual de $" + apuesta + " es insuficiente para jugar con nosotros.");
             console.log("1-RECARGAR DINERO");
             console.log("2-SALIR Y RETIRAR DINERO ");
@@ -90,15 +90,15 @@ do {
             }
             break;
         case 2:
-            if (apuesta >= d1.getValor()) {
-                gano = d1.jugar();
+            if (apuesta >= dados1.getValor()) {
+                gano = dados1.jugar();
                 if (gano === true) {
-                    console.log("Usted gano $" + d1.getValor() * 2 + " . Ahora tiene un total de : $" + (apuesta += d1.getValor()));
-                    d1.modificarArchivo("Historial de Juego de dados.txt", "Partidas ganadas en el juego de dados : " + (pGanadasTDados = pGanadasTDados + 1) + " || Partidas Perdidas " + pPerdidasTDados);
+                    console.log("Usted gano $" + dados1.getValor() * 2 + " . Ahora tiene un total de : $" + (apuesta += dados1.getValor()));
+                    dados1.modificarArchivo("Historial de juego de dados.txt", "Partidas ganadas en el juego de dados : " + (pGanadasTDados = pGanadasTDados + 1) + " || Partidas Perdidas " + pPerdidasTDados);
                 }
                 else {
-                    console.log("Usted perdio $" + d1.getValor() + ". Ahora tiene: $" + (apuesta -= d1.getValor()));
-                    d1.modificarArchivo("Historial de Juego de dados.txt", "Partidas ganadas en el juego de dados : " + pGanadasTDados + " || Partidas Perdidas " + (pPerdidasTDados = pPerdidasTDados + 1));
+                    console.log("Usted perdio $" + dados1.getValor() + ". Ahora tiene: $" + (apuesta -= dados1.getValor()));
+                    dados1.modificarArchivo("Historial de juego de dados.txt", "Partidas ganadas en el juego de dados : " + pGanadasTDados + " || Partidas Perdidas " + (pPerdidasTDados = pPerdidasTDados + 1));
                 }
             }
             else {
@@ -106,15 +106,15 @@ do {
             }
             break;
         case 3:
-            if (apuesta >= c1.getValor()) {
-                gano = c1.jugar();
+            if (apuesta >= caraOSeca1.getValor()) {
+                gano = caraOSeca1.jugar();
                 if (gano === true) {
-                    console.log("Usted gano $ " + c1.getValor() * 2 + " . Ahora tiene un total de : $" + (apuesta += c1.getValor()));
-                    c1.modificarArchivo("Historial de juego Cara o Seca.txt", "Partidas ganadas en el juego cara o seca : " + (pGanadasTCaraOSeca = pGanadasTCaraOSeca + 1) + " || Partidas Perdidas " + pPerdidasTCaraOSeca);
+                    console.log("Usted gano $ " + caraOSeca1.getValor() * 2 + " . Ahora tiene un total de : $" + (apuesta += caraOSeca1.getValor()));
+                    caraOSeca1.modificarArchivo("Historial de juego Cara o Seca.txt", "Partidas ganadas en el juego cara o seca : " + (pGanadasTCaraOSeca = pGanadasTCaraOSeca + 1) + " || Partidas Perdidas " + pPerdidasTCaraOSeca);
                 }
                 else {
-                    console.log("Usted perdio $" + c1.getValor() + ". Ahora tiene un saldo de: $" + (apuesta -= c1.getValor()));
-                    c1.modificarArchivo("Historial de juego Cara o Seca.txt", "Partidas ganadas en el juego cara o seca : " + pGanadasTCaraOSeca + " || Partidas Perdidas " + (pPerdidasTCaraOSeca = pPerdidasTCaraOSeca + 1));
+                    console.log("Usted perdio $" + caraOSeca1.getValor() + ". Ahora tiene un saldo de: $" + (apuesta -= caraOSeca1.getValor()));
+                    caraOSeca1.modificarArchivo("Historial de juego Cara o Seca.txt", "Partidas ganadas en el juego cara o seca : " + pGanadasTCaraOSeca + " || Partidas Perdidas " + (pPerdidasTCaraOSeca = pPerdidasTCaraOSeca + 1));
                 }
             }
             else {
@@ -122,15 +122,15 @@ do {
             }
             break;
         case 4:
-            if (apuesta >= tS.getValor()) {
-                gano = tS.jugar();
+            if (apuesta >= tragamonedaSignos.getValor()) {
+                gano = tragamonedaSignos.jugar();
                 if (gano === true) {
-                    console.log("Usted gano $" + tS.getValor() * 2 + " . Ahora tiene un total de : $" + (apuesta += tS.getValor()));
-                    d1.modificarArchivo("Historial de juego Tragamoneda Signos.txt", "Partidas ganadas en el juego tragamonedas signos : " + (pGanadasTSignos = pGanadasTSignos + 1) + " || Partidas Perdidas " + pPerdidasTSignos);
+                    console.log("Usted gano $" + tragamonedaSignos.getValor() * 2 + " . Ahora tiene un total de : $" + (apuesta += tragamonedaSignos.getValor()));
+                    tragamonedaSignos.modificarArchivo("Historial de juego Tragamoneda Signos.txt", "Partidas ganadas en el juego tragamonedas signos : " + (pGanadasTSignos = pGanadasTSignos + 1) + " || Partidas Perdidas " + pPerdidasTSignos);
                 }
                 else {
-                    console.log("Usted perdio $" + tS.getValor() + ". Ahora tiene un saldo de: $" + (apuesta -= tS.getValor()));
-                    d1.modificarArchivo("Historial de juego Tragamoneda Signos.txt", "Partidas ganadas en el juego tragamonedas signos : " + pGanadasTSignos + " || Partidas Perdidas " + (pPerdidasTSignos = pPerdidasTSignos + 1));
+                    console.log("Usted perdio $" + tragamonedaSignos.getValor() + ". Ahora tiene un saldo de: $" + (apuesta -= tragamonedaSignos.getValor()));
+                    tragamonedaSignos.modificarArchivo("Historial de juego Tragamoneda Signos.txt", "Partidas ganadas en el juego tragamonedas signos : " + pGanadasTSignos + " || Partidas Perdidas " + (pPerdidasTSignos = pPerdidasTSignos + 1));
                 }
             }
             else {
@@ -151,8 +151,8 @@ do {
             break;
     }
 } while (opcion > 6 || opcion <= 5);
-d1.leerArchivo("Historial de juego Tragamoneda Signos.txt");
-c1.leerArchivo("Historial de juego Cara o Seca.txt");
-tS.leerArchivo("Historial de juego Tragamoneda Signos.txt");
+dados1.leerArchivo("Historial de juego de dados.txt");
+caraOSeca1.leerArchivo("Historial de juego Cara o Seca.txt");
+tragamonedaSignos.leerArchivo("Historial de juego Tragamoneda Signos.txt");
 l1.leerArchivo("Historial de juego Tragamoneds Numeros.txt");
 /* opcion!=4 */ 

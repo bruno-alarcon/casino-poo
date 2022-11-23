@@ -7,7 +7,7 @@ export class TragamonedaNumeros extends Tragamonedas{
 
     constructor(){
         super()
-        this.valor=120;
+        this.valor=280;
     }
 
 

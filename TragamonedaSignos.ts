@@ -6,7 +6,7 @@ export class TragamonedaSignos extends Tragamonedas{
 
     constructor(){
        super()
-       this.valor=110;
+       this.valor=350;
     }
 
 
@@ -14,7 +14,7 @@ export class TragamonedaSignos extends Tragamonedas{
         return this.valor;
 
     }
-public asignarSimbolos(num:number):string{
+private asignarSimbolos(num:number):string{
     let simbolo:string= "";
     switch(num){
 
@@ -29,11 +29,8 @@ public asignarSimbolos(num:number):string{
 
         case 3: 
         simbolo="*"
+        break;
 
-
-        case 4:
-            simbolo = "#"
-            break;
 
         default:
             break;

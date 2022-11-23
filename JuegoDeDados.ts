@@ -6,7 +6,7 @@ export class JuegoDeDados{
     protected dado2Jugador:number;
     protected dado1Mesa:number;
     protected dado2Mesa:number;
-    protected valor:number=210;
+    protected valor:number=300;
 
 
 

@@ -21,7 +21,7 @@ var TragamonedaNumeros = /** @class */ (function (_super) {
     __extends(TragamonedaNumeros, _super);
     function TragamonedaNumeros() {
         var _this = _super.call(this) || this;
-        _this.valor = 120;
+        _this.valor = 280;
         return _this;
     }
     TragamonedaNumeros.prototype.getValor = function () {

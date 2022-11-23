@@ -5,7 +5,7 @@ var fs = require('fs');
 var readlineSync = require('readline-sync');
 var CaraOSeca = /** @class */ (function () {
     function CaraOSeca() {
-        this.valor = 250;
+        this.valor = 150;
     }
     CaraOSeca.prototype.getValor = function () {
         return this.valor;

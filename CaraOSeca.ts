@@ -4,7 +4,7 @@ let readlineSync= require('readline-sync');
 
 export class CaraOSeca{
 
-   protected valor:number= 250;
+   protected valor:number= 150;
 
     constructor(){
 
