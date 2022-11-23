@@ -81,7 +81,7 @@ do {
                     l1.modificarArchivo("Historial de juego Tragamoneds Numeros.txt", "Partidas ganadas en el juego tragamonedas numeros : " + (pGanadasTNumeros = pGanadasTNumeros + 1) + " || Partidas Perdidas " + pPerdidasTNumeros);
                 }
                 else {
-                    console.log("USTED PERDIO, AHORA TIENE: $" + (apuesta -= l1.getValor()));
+                    console.log("Usted perdió $" + l1.getValor() + " . Ahora tiene: $" + (apuesta -= l1.getValor()));
                     l1.modificarArchivo("Historial de juego Tragamoneds Numeros.txt", "Partidas perdidas en el juego tragamonedas Numeros : " + pGanadasTNumeros + " || Partidas Perdidas " + (pPerdidasTNumeros = pPerdidasTNumeros + 1));
                 }
             }
@@ -97,7 +97,7 @@ do {
                     d1.modificarArchivo("Historial de Juego de dados.txt", "Partidas ganadas en el juego de dados : " + (pGanadasTDados = pGanadasTDados + 1) + " || Partidas Perdidas " + pPerdidasTDados);
                 }
                 else {
-                    console.log("Usted perdio, ahora tiene: $" + (apuesta -= d1.getValor()));
+                    console.log("Usted perdio $" + d1.getValor() + ". Ahora tiene: $" + (apuesta -= d1.getValor()));
                     d1.modificarArchivo("Historial de Juego de dados.txt", "Partidas ganadas en el juego de dados : " + pGanadasTDados + " || Partidas Perdidas " + (pPerdidasTDados = pPerdidasTDados + 1));
                 }
             }
@@ -113,7 +113,7 @@ do {
                     c1.modificarArchivo("Historial de juego Cara o Seca.txt", "Partidas ganadas en el juego cara o seca : " + (pGanadasTCaraOSeca = pGanadasTCaraOSeca + 1) + " || Partidas Perdidas " + pPerdidasTCaraOSeca);
                 }
                 else {
-                    console.log("Usted perdio, ahora tiene un saldo de: $" + (apuesta -= c1.getValor()));
+                    console.log("Usted perdio $" + c1.getValor() + ". Ahora tiene un saldo de: $" + (apuesta -= c1.getValor()));
                     c1.modificarArchivo("Historial de juego Cara o Seca.txt", "Partidas ganadas en el juego cara o seca : " + pGanadasTCaraOSeca + " || Partidas Perdidas " + (pPerdidasTCaraOSeca = pPerdidasTCaraOSeca + 1));
                 }
             }
@@ -129,7 +129,7 @@ do {
                     d1.modificarArchivo("Historial de juego Tragamoneda Signos.txt", "Partidas ganadas en el juego tragamonedas signos : " + (pGanadasTSignos = pGanadasTSignos + 1) + " || Partidas Perdidas " + pPerdidasTSignos);
                 }
                 else {
-                    console.log("Usted perdio, ahora tiene un saldo de: $" + (apuesta -= tS.getValor()));
+                    console.log("Usted perdio $" + tS.getValor() + ". Ahora tiene un saldo de: $" + (apuesta -= tS.getValor()));
                     d1.modificarArchivo("Historial de juego Tragamoneda Signos.txt", "Partidas ganadas en el juego tragamonedas signos : " + pGanadasTSignos + " || Partidas Perdidas " + (pPerdidasTSignos = pPerdidasTSignos + 1));
                 }
             }

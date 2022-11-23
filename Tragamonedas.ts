@@ -4,9 +4,11 @@ var fs = require('fs');
 
 export class Tragamonedas{
 
+ protected valor:number;
  protected  n1:number;
  protected n2:number;
  protected n3:number;
+
  
 
 

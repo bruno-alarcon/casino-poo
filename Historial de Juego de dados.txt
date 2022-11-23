@@ -1,1 +1,1 @@
-Partidas ganadas en el juego de dados : 1 || Partidas Perdidas 0
+Partidas ganadas en el juego de dados : 0 || Partidas Perdidas 1

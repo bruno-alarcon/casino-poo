@@ -3,7 +3,12 @@ import { Tragamonedas } from "./Tragamonedas";
 
 export class TragamonedaNumeros extends Tragamonedas{
 
-    protected valor:number=120;
+
+
+    constructor(){
+        super()
+        this.valor=120;
+    }
 
 
     public getValor():number{

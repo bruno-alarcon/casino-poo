@@ -1,1 +1,1 @@
-Partidas ganadas en el juego cara o seca : 3 || Partidas Perdidas 1
+Partidas ganadas en el juego cara o seca : 5 || Partidas Perdidas 4

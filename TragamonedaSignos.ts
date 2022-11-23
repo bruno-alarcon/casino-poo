@@ -2,11 +2,11 @@ import { Tragamonedas } from "./Tragamonedas";
 
 
 export class TragamonedaSignos extends Tragamonedas{
-    protected valor:number=110;
 
 
     constructor(){
        super()
+       this.valor=110;
     }
 
 

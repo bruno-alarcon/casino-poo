@@ -20,7 +20,7 @@ var Tragamonedas_1 = require("./Tragamonedas");
 var TragamonedaNumeros = /** @class */ (function (_super) {
     __extends(TragamonedaNumeros, _super);
     function TragamonedaNumeros() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super.call(this) || this;
         _this.valor = 120;
         return _this;
     }
