@@ -1,0 +1,55 @@
+.encabezado{
+    display: flex;
+    justify-content: space-around;
+    border-style: outset;
+}
+h2{
+    font-family:sans-serif;
+}
+.cuerpo{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+table{
+    font-family: sans-serif;
+}
+th{
+    background-color: lightsteelblue;
+}
+td{
+    background-color:   rgba(100, 155, 243, 0.5);
+    border: 1px solid lightskyblue;
+  
+    
+}
+.ver{
+    background-color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.boton-style{
+background-color: white;
+border: none;
+}
+img {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 150px;
+}
+
+img:hover {
+box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.target{
+    display: flex;
+    justify-content: space-around;
+
+}
+h4{
+    display: flex;
+    justify-content: center;
+}
